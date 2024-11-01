@@ -1,37 +1,62 @@
-import path from "path";
-import express from "express";
-import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
 
-import authRoutes from "./routes/auth.routes.js";
-import messageRoutes from "./routes/message.routes.js";
-import userRoutes from "./routes/user.routes.js";
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-import connectToMongoDB from "./db/connectToMongoDB.js";
-import { app, server } from "./socket/socket.js";
+const ChatMessage = require("./models/ChatMessage");
 
-dotenv.config();
-
-const __dirname = path.resolve();
-// PORT should be assigned after calling dotenv.config() because we need to access the env variables. Didn't realize while recording the video. Sorry for the confusion.
+const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
-app.use(cookieParser());
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
-app.use("/api/users", userRoutes);
+// MongoDB Connection
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+const dbURI = "mongodb://localhost:27017/"; // or use "Your MongoDB Atlas connection string here"
+mongoose.connect(dbURI);
 
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => console.log("MongoDB connected successfully"))
+	.catch((error) => console.error("MongoDB connection error:", error));
+
+// Routes
+app.get("/messages", async (req, res) => {
+	try {
+		const messages = await ChatMessage.find();
+		res.json(messages);
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ error: "Internal Server Error" });
+	}
 });
 
-server.listen(PORT, () => {
-	connectToMongoDB();
-	console.log(`Server Running on port ${PORT}`);
+app.post("/messages", async (req, res) => {
+	try {
+		const { user, message } = req.body;
+
+		if (!user || !message) {
+			return res
+				.status(400)
+				.json({ error: "User and message are required" });
+		}
+
+		const chatMessage = new ChatMessage({
+			user,
+			message,
+		});
+
+		await chatMessage.save();
+
+		res.status(201).json(chatMessage);
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ error: "Internal Server Error" });
+	}
 });
 
-
+// Start the server
+app.listen(PORT, () => {
+	console.log(`Server is running on port ${PORT}`);
+});

@@ -1,42 +1,54 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* src/App.css */
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background for dark mode */
+  color: #e0e0e0; /* Light text for readability */
+}
+
+.App {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #25d366; /* WhatsApp-inspired green for headers */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+li {
+  background-color: #2a2a2a; /* Darker gray background for list items */
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #ffffff; /* White text color for readability */
 }
 
-.card {
-  padding: 2em;
+input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #25d366; /* WhatsApp green for border */
+  background-color: #2c2c2c; /* Darker input background */
+  color: #e0e0e0; /* Light text color in input */
+  border-radius: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+button {
+  padding: 10px;
+  background-color: #fffc00; /* Snapchat yellow for button background */
+  color: #121212; /* Dark text for contrast on yellow */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #25d366; /* WhatsApp green on hover */
+  color: #ffffff; /* Light color for text on hover */
 }
