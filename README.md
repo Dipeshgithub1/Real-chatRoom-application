@@ -3,9 +3,11 @@
 
 - The "ChatRoom Website" project is a dynamic web application that is used for real-time communication.
 - The MERN stack Used -  comprised of MongoDB, Express.js, React.js, and Node.js, is a powerful combination of technologies for developing robust and scalable web applications.
+
   # Feature
-  - allowing users to do instant conversations.
-  - Make Room for chat
+  
+  -  allowing users to do instant conversations.
+  -  Make Room for chat
  
   # ProjectFlow Work Flow -
 - First, create a backend server which will serve a middleman between mongDB and React FrontEnd.
