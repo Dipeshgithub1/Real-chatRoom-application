@@ -29,9 +29,9 @@
 
 # Step 3: Creating the frontend of the app by using the following command
 
-cd ..
-npx create-react-app frontend
-cd frontend
+- cd ..
+- npx create-react-app frontend
+- cd frontend
 # Step 4: Install the required dependencies.
 
 - npm install axios react-router-dom socket.io-client
