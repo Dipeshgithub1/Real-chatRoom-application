@@ -7,7 +7,7 @@
   - allowing users to do instant conversations.
   - Make Room for chat
  
-  - Work Flow -
+  # ProjectFlow Work Flow -
 - First, create a backend server which will serve a middleman between mongDB and React FrontEnd.
 - create an Interactive and Simple UI design for the frontEnd in which the message is sent and the other user responds to it.
 - All the messages along with userName will be sent to backend using above created backend.
