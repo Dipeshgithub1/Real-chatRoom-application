@@ -1,5 +1,5 @@
 
-# Real-chatRoom-application
+# Real-chatRoom-application   ![image](https://github.com/user-attachments/assets/bf6fd00c-94c1-49e7-91f6-fd58b045f918)
 
 - The "ChatRoom Website" project is a dynamic web application that is used for real-time communication.
 - The MERN stack Used -  comprised of MongoDB, Express.js, React.js, and Node.js, is a powerful combination of technologies for developing robust and scalable web applications.
@@ -41,5 +41,7 @@ cd frontend
 - npm start
 
 - http://localhost:3000/
+
+
 
 
