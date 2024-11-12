@@ -42,7 +42,7 @@
 - cd frontend
 - npm start
 
-- http://localhost:3000/
+- (https://chatwalaroomm.netlify.app/)
 
 
 
