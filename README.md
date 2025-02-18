@@ -1,15 +1,15 @@
 
-# Real-chatRoom-application   ![image](https://github.com/user-attachments/assets/bf6fd00c-94c1-49e7-91f6-fd58b045f918)
+## Real-chatRoom-application   ![image](https://github.com/user-attachments/assets/bf6fd00c-94c1-49e7-91f6-fd58b045f918)
 
 - The "ChatRoom Website" project is a dynamic web application that is used for real-time communication.
 - The MERN stack Used -  comprised of MongoDB, Express.js, React.js, and Node.js, is a powerful combination of technologies for developing robust and scalable web applications.
 
-  # Feature
+  ## Features
   
   -  allowing users to do instant conversations.
   -  Make Room for chat
  
-  # ProjectFlow Work Flow -
+  ## ProjectFlow Work Flow -
 - First, create a backend server which will serve a middleman between mongDB and React FrontEnd.
 - create an Interactive and Simple UI design for the frontEnd in which the message is sent and the other user responds to it.
 - All the messages along with userName will be sent to backend using above created backend.
@@ -20,7 +20,7 @@
 - mkdir backend
 - cd backend
 
- # Step 2: Initialize a Node application and install required dependencies:
+ ## Step 2: Initialize a Node application and install required dependencies:
 
 - npm init -y
 - npm install express mongoose cors socket.io
